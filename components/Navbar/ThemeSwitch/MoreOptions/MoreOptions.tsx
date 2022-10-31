@@ -32,8 +32,8 @@ interface OptionProps {
 const Option = ({ label, icon, onClick }: OptionProps) => {
   return (
     <li>
-      <button className="flex py-2 whitespace-nowrap w-full" onClick={onClick}>
-        <FontAwesomeIcon className="w-6 h-6 mr-3" icon={icon} />
+      <button className="flex items-center py-2 whitespace-nowrap w-full" onClick={onClick}>
+        <FontAwesomeIcon className="w-5 h-5 mr-3" icon={icon} />
         {label}
       </button>
     </li>

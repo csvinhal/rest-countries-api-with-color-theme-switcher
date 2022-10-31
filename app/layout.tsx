@@ -1,35 +1,33 @@
-import { Nunito_Sans } from '@next/font/google'
-import cx from 'classnames'
-import { ThemeProvider } from 'next-themes'
 import Navbar from '../components/Navbar/Navbar'
 import './global.css'
-
-const nunitoSansLigh = Nunito_Sans({ weight: '300' })
-
-const nunitoSansSemiBold = Nunito_Sans({ weight: '600' })
-
-const nunitoSansExtraBold = Nunito_Sans({ weight: '800' })
 
 interface Props {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const RootLayout = ({ children }: Props) => {
   return (
-    <html
-      lang="en"
-      className={cx(
-        nunitoSansLigh.className,
-        nunitoSansSemiBold.className,
-        nunitoSansExtraBold.className,
-      )}
-    >
-      <body className="bg-very-light-gray-light dark:bg-very-dark-blue-dark text-very-dark-blue-light dark:text-white">
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-light bg-very-light-gray-light dark:bg-very-dark-blue-dark text-very-dark-blue-light dark:text-white">
         <Navbar />
-        <main>{children}</main>
+        <main className="p-6">{children}</main>
       </body>
     </html>
   )
 }
 
-export default Layout
+export default RootLayout

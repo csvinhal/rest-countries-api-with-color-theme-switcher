@@ -4,12 +4,11 @@ const Head = () => {
   return (
     <>
       <title>Countries around the world</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
         name="description"
         content="This website possibility you to search for coutries around de world"
       />
+
       <Script
         id="default-theme"
         dangerouslySetInnerHTML={{
