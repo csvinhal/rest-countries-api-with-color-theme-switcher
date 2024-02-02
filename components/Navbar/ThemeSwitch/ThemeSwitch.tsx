@@ -1,7 +1,6 @@
 'use client'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faCircleHalfStroke,
   faLightbulb,
   faMoon,
 } from '@fortawesome/free-solid-svg-icons'
@@ -14,12 +13,11 @@ import { useState } from 'react'
 import { ThemeObject, ThemeObjectValues, useTheme } from './hooks/useTheme'
 import MoreOptions from './MoreOptions/MoreOptions'
 
-library.add(faMoon, faLightbulb, faCircleHalfStroke)
+library.add(faMoon, faLightbulb)
 
 type Option = { icon: FontAwesomeIconProps['icon']; label: string }
 
 const THEME: { [k in ThemeObjectValues]: Option } = {
-  ['os-system']: { icon: 'circle-half-stroke', label: 'OS System' },
   dark: { icon: 'moon', label: 'Dark Mode' },
   light: { icon: 'lightbulb', label: 'Light Mode' },
 } as const
@@ -38,14 +36,6 @@ const NavTheme = () => {
         {THEME[theme].label}
       </button>
       <MoreOptions show={open}>
-        <MoreOptions.Option
-          label="OS Default"
-          icon="circle-half-stroke"
-          onClick={() => {
-            setTheme(ThemeObject.os)
-            setOpen(false)
-          }}
-        />
         <MoreOptions.Option
           label="Light"
           icon="lightbulb"
