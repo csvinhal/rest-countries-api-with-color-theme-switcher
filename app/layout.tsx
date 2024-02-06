@@ -21,7 +21,7 @@ const RootLayout = ({ children }: Props) => {
       </head>
       <body className="font-light bg-very-light-gray-light dark:bg-very-dark-blue-dark text-very-dark-blue-light dark:text-white">
         <Navbar />
-        <main className="p-6">{children}</main>
+        <main className="p-12">{children}</main>
       </body>
     </html>
   )

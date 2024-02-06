@@ -1,6 +1,11 @@
+import Filter from '../components/Filter/Filter'
+
 const Page = () => {
   return (
-    <div>Page</div>
+    <>
+      <Filter />
+      <div>Page</div>
+    </>
   )
 }
 
